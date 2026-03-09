@@ -8,25 +8,31 @@
         body { font-family: Arial, sans-serif; margin: 20px; }
         button { padding: 10px 20px; margin: 5px; cursor: pointer; }
         .question { margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 8px; margin-top: 5px; }
     </style>
 </head>
 <body>
     <h1>Medical Evaluation Question and Answer Test</h1>
-    <div class="question">
-        <p>Question 1: What is your symptom?</p>
-        <button onclick="alert('Option A selected')">Option A</button>
-        <button onclick="alert('Option B selected')">Option B</button>
-    </div>
-    <div class="question">
-        <p>Question 2: How severe is it?</p>
-        <button onclick="alert('Mild')">Mild</button>
-        <button onclick="alert('Moderate')">Moderate</button>
-        <button onclick="alert('Severe')">Severe</button>
-    </div>
-    <button onclick="submitTest()">Submit Test</button>
+    <form id="testForm">
+        <div class="question">
+            <label for="symptom">Question 1: What is your symptom?</label>
+            <input type="text" id="symptom" name="symptom" required>
+        </div>
+        <div class="question">
+            <label for="severity">Question 2: How severe is it? (Describe)</label>
+            <textarea id="severity" name="severity" rows="4" required></textarea>
+        </div>
+        <button type="button" onclick="submitTest()">Submit Test</button>
+    </form>
     <script>
         function submitTest() {
-            alert('Test submitted!');
+            const symptom = document.getElementById('symptom').value;
+            const severity = document.getElementById('severity').value;
+            if (symptom && severity) {
+                alert(`Symptom: ${symptom}\nSeverity: ${severity}\nTest submitted!`);
+            } else {
+                alert('Please fill in all fields.');
+            }
         }
     </script>
 </body>
