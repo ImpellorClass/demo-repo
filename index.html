@@ -13,7 +13,12 @@
 </head>
 <body>
     <h1>Medical Evaluation Question and Answer Test</h1>
-    <form id="https://formspree.io/f/mnjgpopn" method="POST">
+    <form action="https://formspree.io/f/mnjgpopn" method="POST">
+        <input type="hidden" name="_subject" value="Medical Evaluation Submission">
+        <div class="question">
+            <label for="email">Your Email (required for submission):</label>
+            <input type="email" id="email" name="email" required>
+        </div>
         <div class="question">
             <label for="symptom">Question 1: What is your symptom?</label>
             <input type="text" id="symptom" name="symptom" required>
@@ -24,17 +29,6 @@
         </div>
         <button type="submit">Submit Test</button>
     </form>
-    <script>
-        function submitTest() {
-            const symptom = document.getElementById('symptom').value;
-            const severity = document.getElementById('severity').value;
-            if (symptom && severity) {
-                alert(`Symptom: ${symptom}\nSeverity: ${severity}\nTest submitted!`);
-            } else {
-                alert('Please fill in all fields.');
-            }
-        }
-    </script>
 </body>
 </html></content>
 <parameter name="filePath">vscode-vfs://github/ImpellorClass/demo-repo/index.html
