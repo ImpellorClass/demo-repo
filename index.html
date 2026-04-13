@@ -22,6 +22,32 @@
             <input type="email" id="email" name="email" required>
         </div>
         <div class="question">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div class="question">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="question">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+        </div>
+        <div class="question">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <div class="question">
             <label for="symptom">Question 1: What is your symptom?</label>
             <input type="text" id="symptom" name="symptom" required>
         </div>
@@ -34,12 +60,11 @@
             <textarea id="time" name="time" rows="4" required></textarea>
         </div>
         <div class="question">
-            <label>Question 4: Placeholder Question</label><br>
-            <input type="radio" id="opt1" name="q4" value="Option 1"> Option 1<br>
-            <input type="radio" id="opt2" name="q4" value="Option 2"> Option 2<br>
-            <input type="radio" id="opt3" name="q4" value="Option 3"> Option 3<br>
-            <input type="radio" id="opt4" name="q4" value="Option 4"> Option 4<br>
-            <input type="radio" id="other" name="q4" value="other"> Other: <input type="text" id="multiple choice 1: other" name="otherText" disabled>
+            <label>Question 4: How would you rate your overall health?</label><br>
+            <input type="radio" id="excellent" name="health_rating" value="Excellent"> Excellent<br>
+            <input type="radio" id="good" name="health_rating" value="Good"> Good<br>
+            <input type="radio" id="fair" name="health_rating" value="Fair"> Fair<br>
+            <input type="radio" id="poor" name="health_rating" value="Poor"> Poor<br>
         </div>
         
         <p><strong>Note:</strong> answer with N/A if not applicable.</p>
@@ -55,14 +80,30 @@
             <label for="dietary">Provide any specific dietary restrictions or modifications such as diabetes.</label>
             <textarea id="dietary" name="dietary" rows="4"></textarea>
         </div>
+        <div class="question">
+            <label for="family_history">Family History: List any significant medical conditions in your immediate family (parents, siblings, children), including ages of onset if known.</label>
+            <textarea id="family_history" name="family_history" rows="4"></textarea>
+        </div>
+        <div class="question">
+            <label for="social_history">Social History: Describe your smoking history, alcohol use, exercise habits, and any other lifestyle factors.</label>
+            <textarea id="social_history" name="social_history" rows="4"></textarea>
+        </div>
+        <div class="question">
+            <label for="allergies">Allergies: List any allergies to medications, foods, or environmental factors, including reactions.</label>
+            <textarea id="allergies" name="allergies" rows="4"></textarea>
+        </div>
+        <div class="question">
+            <label for="review_systems">Review of Systems: Describe any symptoms or issues with the following systems (answer N/A if none): Constitutional, Eyes, Ears, Nose/Sinuses, Throat/Mouth, Cardiovascular, Respiratory, Gastrointestinal, Genitourinary, Musculoskeletal, Skin, Neurological, Psychiatric, Endocrine.</label>
+            <textarea id="review_systems" name="review_systems" rows="6"></textarea>
+        </div>
+        <div class="question">
+            <label for="emergency_contact">Emergency Contact: Name, relationship, phone number.</label>
+            <textarea id="emergency_contact" name="emergency_contact" rows="2"></textarea>
+        </div>
         
         <button type="submit">Submit Test</button>
     </form>
-    <script>
-        document.getElementById('other').addEventListener('change', function() {
-            document.getElementById('multiple choice 1: text').disabled = !this.checked;
-        });
-    </script>
+
     </div>
 </body>
 </html></content>
