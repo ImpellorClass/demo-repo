@@ -78,8 +78,17 @@
         <button type="submit">Submit Test</button>
     </form>
     <script>
-        document.getElementById('other').addEventListener('change', function() {
-            document.getElementById('multiple choice 1: text').disabled = !this.checked;
+        const otherTextBox = document.getElementById('multiple choice 1: other');
+        const radioButtons = document.querySelectorAll('input[name="q4"]');
+        
+        radioButtons.forEach(button => {
+            button.addEventListener('change', function() {
+                if (this.id === 'other') {
+                    otherTextBox.disabled = false;
+                } else {
+                    otherTextBox.disabled = true;
+                }
+            });
         });
     </script>
     </div>
